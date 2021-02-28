@@ -5,8 +5,10 @@ interface IUser {
   getUserId(): number;
 }
 export class User implements IUser {
-  id: number = generateId();
-  constructor(public name: string) {}
+  id: number;
+  constructor(public name: string) {
+    this.id = generateId();
+  }
   getUserId(): number {
     return this.id;
   }

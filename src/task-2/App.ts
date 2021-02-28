@@ -11,10 +11,8 @@ export class App implements IApp {
   constructor(public name: string) {}
   setName(name: string): void {
     this.name = name;
-    console.log(`Added name ${this.name}`);
   }
   addProject(project: Project): void {
     this.projects.push(project);
-    console.log(`Added new project to ${this.name}`);
   }
 }

@@ -12,9 +12,11 @@ interface ITask {
   getTaskId(): number;
 }
 export class Task implements ITask {
-  readonly id: number = generateId();
+  readonly id: number;
   completed: boolean = false;
-  constructor(public durationMin: number, public title: string, public developer: User) {}
+  constructor(public durationMin: number, public title: string, public developer: User) {
+    this.id = generateId();
+  }
   getInfo(): string {
     return `${this.id} ${this.title} ${this.completed ? 'completed' : 'not completed'}`;
   }
